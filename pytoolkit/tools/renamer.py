@@ -1,6 +1,6 @@
 import os
 
-def rename_files(folder_path, prefix="", suffix="", ext_filter=None, dry_run=False):
+def rename_files(folder_path, prefix="", suffix="", ext_filter=None):
     if not os.path.exists(folder_path):
         print(f"Folder not found: {folder_path}")
         return
@@ -14,8 +14,5 @@ def rename_files(folder_path, prefix="", suffix="", ext_filter=None, dry_run=Fal
             continue
         new_name = f"{prefix}{name}{suffix}{ext}"
         new_path = os.path.join(folder_path, new_name)
-        if dry_run:
-            print(f"[DRY RUN] Would rename: {filename} -^> {new_name}")
-        else:
-            os.rename(file_path, new_path)
-            print(f"Renamed: {filename} -^> {new_name}")
+        os.rename(file_path, new_path)
+        print(f"Renamed: {filename} -^> {new_name}")
