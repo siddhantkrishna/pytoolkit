@@ -24,3 +24,12 @@ def find_duplicates(folder_path):
             else:
                 hashes[file_hash] = file_path
     return duplicates
+
+def delete_duplicates(duplicates):
+    deleted = []
+    for file_hash, paths in duplicates.items():
+        for path in paths[1:]:
+            os.remove(path)
+            deleted.append(path)
+            print(f"Deleted: {path}")
+    return deleted
