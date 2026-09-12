@@ -6,3 +6,8 @@ A CLI toolkit of everyday automation utilities built with Python.
 - File Organizer
 - Bulk Renamer
 - Duplicate Finder
+
+## Usage
+```
+python cli.py organize <folder_path>
+```
